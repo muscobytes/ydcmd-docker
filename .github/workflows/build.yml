@@ -22,5 +22,5 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:${{ steps.vars.outputs.tag }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:${{ env.VERSION }}
 
