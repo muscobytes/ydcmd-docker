@@ -5,7 +5,7 @@ RUN apk update && \
     apk add --no-cache git && \
     pip install python-dateutil && \
     mkdir --parent /tmp/ydcmd && \
-    git clone --depth 1 --branch v${YDCMD_VERSION} https://github.com/abbat/ydcmd.git /tmp/ydcmd && \
+    git clone --depth 1 --branch ${YDCMD_VERSION} https://github.com/abbat/ydcmd.git /tmp/ydcmd && \
     apk del git && \
     cp /tmp/ydcmd/ydcmd.py /usr/local/bin/ydcmd && \
     rm -rf /tmp/ydcmd
