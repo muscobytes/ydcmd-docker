@@ -31,4 +31,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            VERSION=$VERSION
+            YDCMD_VERSION=$VERSION
