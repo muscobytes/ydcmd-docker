@@ -20,7 +20,5 @@ jobs:
         with:
           context: "{{defaultContext}}"
           push: true
-          tags: |
-            muscobytes/ydcmd:latest
-            muscobytes/ydcmd:${{ env.VERSION }}
-          images: python:3.6-alpine
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ydcmd:latest muscobytes/ydcmd:${{ env.VERSION }}
+
