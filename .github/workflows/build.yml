@@ -20,7 +20,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
             images: |
-                python:3.6-alpine
+                ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd
             tags: |
                 type=raw,value=latest
                 type=raw,value=$VERSION
