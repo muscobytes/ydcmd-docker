@@ -23,7 +23,7 @@ jobs:
                 ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd
             tags: |
                 type=raw,value=latest
-                type=raw,value=${{ env.VERSION }}
+                type=raw,value={{VERSION}}
       -
         name: Build and push
         uses: docker/build-push-action@v4
