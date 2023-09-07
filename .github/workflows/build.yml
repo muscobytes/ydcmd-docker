@@ -15,12 +15,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+            images: |
+                python:3.6-alpine
+            tags: |
+                type=raw,value=latest
+                type=raw,value=$VERSION
+      -
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}"
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:${{ env.VERSION }}
-
+          tags: ${{ steps.meta.outputs.tags }}
