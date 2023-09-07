@@ -20,5 +20,5 @@ jobs:
         with:
           context: "{{defaultContext}}"
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ydcmd:latest muscobytes/ydcmd:${{ env.VERSION }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:latest ${{ secrets.DOCKERHUB_USERNAME }}/ydcmd:$VERSION
 
